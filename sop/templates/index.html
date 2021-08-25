@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css" />
   </head>
   
   <body>
@@ -17,7 +18,7 @@
     <div class="feed">
       <div class="feed-left">
       <div class="feed-username">{{Username}}</div>
-      <img class="feed-img" src='images/VeganFood.jpg' alt='veganfood'>
+      <img class="feed-img" src="{% static 'assets/images/VeganFood.jpg' %}"" alt='veganfood'>
       </div>
       <div class="feed-right">
       <div>{{Shopname}}</div>

@@ -8,20 +8,28 @@
         "index": 34
       }
     ],
+    "sop/templates/about.html": [
+      {
+        "id": "e3a65595-d09d-4983-ada3-fd317ea02462",
+        "line": 20,
+        "version": 58,
+        "index": 672
+      }
+    ],
     "sop/templates/index.html": [
       {
         "id": "6b0cc7b8-5bcb-4233-b1b3-fd94e059c835",
-        "line": 26,
-        "version": 1,
-        "index": 700
+        "line": 27,
+        "version": 6,
+        "index": 767
       }
     ],
     "sop/urls.py": [
       {
         "id": "6ff01b23-d34b-4515-9c0d-b558fef7a272",
         "line": 7,
-        "version": 57,
-        "index": 113
+        "version": 80,
+        "index": 158
       }
     ]
   }

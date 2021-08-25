@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css" />
+    
+      </style>
+  </head>
+  <body>
+    <div w3-include-html="landing.html"></div>
+  <div class="container">
+      <h1>About Us</h1>
+      <p>At such struggling times, we, the Meme Team is here to guide you to your solutions. From complicated,hard-to-understand SOPs to killing time with the most unique courses near you, we've simplified and packaged it into a single,neat website, just for you!</p>
+			<p> -irfan gae </p> 
+    <br>
+    <button class="button" style="vertical-align:middle" onclick="location.href='https://covid-19.moh.gov.my/hotline'">
+      <span>Hotlines</span>
+    </button>
+  
+
+
+<br>
+      
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <a href="https://www.instagram.com/hsinorshin/" target="_blank"><button class="button" style="vertical-align:middle">
+        <span ><img src="{% static 'assets/images/InstagramLogo.png' %}" alt="insta logo"> @xxx</span>
+      </a>
+ 
+      <a href="mailto:bangtan0526@gmail.com" target="_blank"><button class="button" style="vertical-align:middle">
+        <span><img src="{% static 'assets/images/Emaillogo.png' %}" alt="email logo"> xxx@gmail.com</span>
+      </a>
+
+      <button class="button" style="vertical-align:middle">
+        <span><img src="{% static 'assets/images/PhoneLogo.png' %}" alt="phone logo"> +6012-3456789</span>
+      
+      </div>
+
+        
+  </div>
+  </div>
+    
+
+
+    <div w3-include-html="nav.html"></div>
+    
+    <script src="{% static 'assets/script/script.js' %}"></script>
+    <script>includeHTML();</script>
+  </body>
+</html>

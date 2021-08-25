@@ -59,3 +59,11 @@ def landing(request):
     form = Landing_form()
 
   return render(request, "landing.html", {"form":form})
+
+def about(request):
+  return render(request, "about.html", {})
+
+def result(request):
+  
+  return render(request, "result.html", {})
+

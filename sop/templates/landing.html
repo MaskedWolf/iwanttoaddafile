@@ -6,8 +6,7 @@
       {{form}}
       <button type="submit">go</button>
 			{% if state != 'None' %}
-			{% block result_page %}
-			{% endblock %}
+	
 			{% endif %}
     </form>
 </div>
@@ -23,7 +22,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>repl.it</title>
-	<link href="{% static 'assets/sop/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="{% static 'assets/css/styles.css' %}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -31,16 +30,15 @@
   <header class='landing'>
 	<h1 class="main-header">Meme </h1>
 	<form class="landing-form" method="POST">
-      {% csrf_token %}
-      {{form}}
-      <button type="submit">go</button>
-			{% if state != 'None' %}
-			{% block result_page %}
-			{% endblock %}
-			{% endif %}
-    </form>
+		{% csrf_token %}
+		{{form}}
+		<button type="submit" class="submit-btn"><a href {% url 'result' %}>Go!</a></button>
+		{% if state != 'None' %}
+		{% block result_page %}
+		{% endblock %}
+		{% endif %}
+	</form>
   </header>
-
-    <script src="script.js"></script>
+    <script src="{% static 'assets/script/script.js' %}"></script>
   </body>
 </html>

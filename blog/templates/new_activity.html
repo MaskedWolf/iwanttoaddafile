@@ -20,14 +20,14 @@
   {% endif %}
 </form>
 !-->
-
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Submit an activity!</title>
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css" />
     
       </style>
   </head>
@@ -63,17 +63,24 @@
     </div>
 
     <div class="button-group">
+
+      <a href="{% url 'register' %}">
       <button class="button" style="vertical-align:middle" onclick="document.location=''">
       <span>Register</span>
       </button>
+      </a>
 
+      <a href="{% url 'login' %}">
       <button class="button" style="vertical-align:middle" onclick="document.location=''">
       <span>Login</span>
       </button>
+      </a>
 
+      <a href="{% url 'logout' %}">
       <button class="button" style="vertical-align:middle; background-color: #DF5252" onclick="document.location=''">
       <span>Logout</span>
       </button>
+      </a>
 
       <div w3-include-html="nav.html"></div>
       
