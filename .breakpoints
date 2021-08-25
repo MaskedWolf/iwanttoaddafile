@@ -3,9 +3,9 @@
     "blog/templates/blog_index.html": [
       {
         "id": "fa85d8a3-9bda-4c39-94d1-6ed1a24d3ae1",
-        "line": 2,
-        "version": 265,
-        "index": 34
+        "line": 1,
+        "version": 326,
+        "index": 0
       }
     ],
     "sop/templates/about.html": [
@@ -27,9 +27,9 @@
     "sop/urls.py": [
       {
         "id": "6ff01b23-d34b-4515-9c0d-b558fef7a272",
-        "line": 7,
-        "version": 80,
-        "index": 158
+        "line": 8,
+        "version": 122,
+        "index": 203
       }
     ]
   }

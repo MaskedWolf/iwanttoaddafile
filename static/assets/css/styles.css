@@ -116,6 +116,7 @@ html,body{
   min-width: 800px;
   box-sizing: border-box;
   background-color: #222;
+  background-image: url('images/marble1.jfif');
   text-align: right;
   display:flex;
   flex-direction: row; 
@@ -172,6 +173,8 @@ html,body{
 
 .feed img{
   width:95%;
+  height: 95%;
+  object-fit: cover;
   height:auto;
   padding: 0% 0% 1% 2.5%;
   
@@ -243,7 +246,7 @@ ul.others-list li {
 .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f0724b;
+  background-color: darkgray;
   border: none;
   border-radius: 10px;
   color: #FFFFFF;
@@ -322,4 +325,11 @@ ul.others-list li {
   width:100px;
   height:100px;
   vertical-align: middle;
+}
+
+.submit-header{
+  margin: 0.5%;
+  font-size: 2em;
+
+
 }

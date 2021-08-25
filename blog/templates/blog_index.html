@@ -1,70 +1,32 @@
-<h1>All activities are below</h1>
+{% extends "base.html" %}
 
-<div>
-{% for post in posts %}
+{% block content %}
+{% load static %}
+  
+
+    <!-- <div class="search">
+    <input name='search' type='text' placeholder="Search &#8711;">
+    </div> -->
+    {% for post in posts %}
     <div class="feed">
       <div class="feed-left">
       <div class="feed-username">{{post.username}}</div>
-      <img class="feed-img" src='{{ post.image.url }}' alt='{{post.shopname}}img'>
+      <!-- <img class="feed-img" src="{% static 'assets/images/VeganFood.jpg' %}"  alt='veganfood'> -->
+      <img class="feed-img" src="{{ post.image.url }}"  alt='veganfood'>
       </div>
       <div class="feed-right">
       <div>{{post.shopname}}</div>
       <div>{{post.descriptions}}</div>
+      <div>{{post.category}}</div>
       <div>{{post.state}}</div>
       </div>
-
     </div>
-    <div class="feed-tag">
-      <span>{{post.category}}</span>
-      <span>{{post.category}}</span>
-      <span>{{post.category}}</span>
-    </div>
-
-      {% endfor %}
-      </div>
-!-->
-
-{% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css" />
-  </head>
-  
-  <body>
-    <div w3-include-html="landing.html"></div>
-
-    <div class="search">
-    <input name='search' type='text' placeholder="Search &#8711;">
-    </div>
-
-    <div class="feed">
-      <div class="feed-left">
-      <div class="feed-username">{{Username}}</div>
-      <img class="feed-img" src="{% static 'assets/images/VeganFood.jpg' %}"" alt='veganfood'>
-      </div>
-      <div class="feed-right">
-      <div>{{Shopname}}</div>
-      <div>{{Descriptions}}</div>
-      <div>{{Category}}</div>
-      <div>{{State}}</div>
-      </div>
-
-    </div>
-      <div class="feed-tag">
+    {% endfor %}
+      <!-- <div class="feed-tag">
         <span>{{tag1}}</span>
         <span>{{tag2}}</span>
         <span>{{tag3}}</span>
-      </div>
+      </div> -->
+ 
+{% endblock %}
 
-      <div w3-include-html="nav.html"></div>
-
-
-    
-    <script src="script.js"></script>
-    <script>includeHTML();</script>
-  </body>
-</html>

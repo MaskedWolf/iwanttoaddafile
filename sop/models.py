@@ -36,7 +36,7 @@ class Sopdetail(models.Model):
 
 	Description_Arts = models.CharField(max_length=200,null=True)
 
-	Description_Receation = models.CharField(max_length=200,null=True)
+	Description_Recreation = models.CharField(max_length=200,null=True)
 
 	Description_Health = models.CharField(max_length=200,null=True)
 

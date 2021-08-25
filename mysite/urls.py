@@ -16,16 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from account import views as accountViews
+from blog import views as blogViews
 
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-		path('', include('sop.urls')),
-    path('blog/', include('blog.urls')),
+		path('', include('blog.urls')),
+    path('sop/', include('sop.urls')),
     path('register/', accountViews.register, name="register"),
     path('', include("django.contrib.auth.urls")),
+    path('portal/', blogViews.portal, name="portal"),
 ]
 
 if settings.DEBUG:

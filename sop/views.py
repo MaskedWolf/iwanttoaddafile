@@ -36,6 +36,7 @@ def landing(request):
 #	}
 #	return render(request, "result.html", context)
 """
+
 def landing(request):
   fetch = None
   if request.method == 'POST':
@@ -63,7 +64,30 @@ def landing(request):
 def about(request):
   return render(request, "about.html", {})
 
-def result(request):
-  
-  return render(request, "result.html", {})
 
+
+
+def sop(request):
+  fetch = None
+  if request.method == 'POST':
+			print(request.POST)
+			form = Landing_form(request.POST)
+			if form.is_valid():
+				if form.cleaned_data["fully_vaccinated"] == True:
+					fetch = Sopdetail.objects.filter(state = form.cleaned_data["state"]).get(vaccine = 'True')
+
+				elif form.cleaned_data["fully_vaccinated"] == False:
+					fetch = Sopdetail.objects.filter(state = form.cleaned_data["state"]).get(vaccine = 'False')
+
+				#fetch = Sopdetail.objects.get(state=form.cleaned_data["state"], vaccine=form.cleaned_data["fully_vaccinated"])
+				insert = {
+					"form": Landing_form(request.POST),
+					"SOP": fetch,
+          
+        }
+				return render(request, "sop.html", insert)
+
+  else:
+    form = Landing_form()
+
+  return render(request, "sop.html", {"form":form})

@@ -5,6 +5,7 @@ from django.shortcuts import render
 from blog.models import Activity, State
 from .forms import ActivityForm
 from django.contrib import messages
+from sop.forms import Landing_form
 
 
 def blog_index(request):
@@ -45,6 +46,13 @@ def add_new_activity(request):
   }
   return render(request, "new_activity.html", context)
 
+def portal(request):
+  return render(request, "portal.html", {})
+"""
+def portal(request):
+  form = Landing_form()
+  return render(request, "test.html", {"form": form})
+"""
 
 # obj = State.set(
 # 	username=request.user,

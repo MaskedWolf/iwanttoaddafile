@@ -137,5 +137,5 @@ X_FRAME_OPTIONS = '*'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-LOGIN_REDIRECT_URL ="/blog/createnew"
+LOGIN_REDIRECT_URL ="/createnew"
 LOGOUT_REDIRECT_URL ="/"

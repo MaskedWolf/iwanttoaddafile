@@ -6,7 +6,7 @@ class ActivityForm(forms.Form):
         max_length=255,
         widget=forms.TextInput(attrs={
             "class": "form-control",
-            "placeholder": "Activity Name"
+            "placeholder": "Activity Name",
         })
     )
     
@@ -25,7 +25,7 @@ class ActivityForm(forms.Form):
         ('4', 'Malacca'),
         ('5','Negeri Sembilan'),
         ('6', 'Pahang'),
-        ('7', 'Penang'), #Pinang - tian ern
+        ('7', 'Penang'), 
         ('8', 'Perak'),
         ('9', 'Perlis'),
         ('10', 'Sabah'),

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    
+      </style>
+  </head>
+  <body>
+    <div w3-include-html="landing.html"></div>
+    <div class="container submit">
+      <a href={% url 'create_new_activity' %}
+      <h1 class="submit-header">Submit an activity!</h1>
+      </a>
+      <p>
+        Do you own a business, or run an activity that you'd like others to know about?
+       <br>
+       <br>
+        Register to submit a post, & it will show up on the feed for those who can access it according to their location & vaccination status.
+
+      <br>
+       <br>
+
+        You can also submit on behalf of someone else, just make sure to include their contact information!
+      
+
+      </p>
+      
+      <br>
+
+      <h3>Submissions include:</h3>
+      <ul>
+        <li>Businesses (physical or online)</li>
+        <li>Services (physical or online)</li>
+        <li>Volunteer Services</li>
+        <li>Tutoring</li>
+        <li>...etc.</li>
+      </ul>
+
+    </div>
+
+    <div class="button-group">
+      <a href={% url 'register' %}>
+      <button class="button"  style="vertical-align:middle" onclick="document.location=''">
+      <span>Register</span>
+      </button>
+      </a>
+      
+      <a href={% url 'login' %}>
+      <button class="button" style="vertical-align:middle" onclick="document.location=''">
+      <span>Login</span>
+      </button>
+      </a>
+      <a href={% url 'logout' %}>
+      <button class="button" style="vertical-align:middle; background-color: #DF5252" onclick="document.location=''">
+      <span>Logout</span>
+      </button>
+      </a>
+
+      <div w3-include-html="nav.html"></div>
+      
+      <script src="script.js"></script>
+      <script>includeHTML();</script>
+    </div>
+    
+  </body>
+</html>
+{% endblock %}
