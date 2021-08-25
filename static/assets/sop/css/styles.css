@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+* {
+  font-family: 'Quicksand';
+  color: white;
+  
+}
+
+body{
+  min-width: 800px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  
+}
+
+h3 {
+  text-align: center;
+}
+
+.btn-group{
+  padding: 15px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0;
+  cursor: pointer;
+
+}
+
+.others{
+  width: 100%;
+  padding: 30px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0;
+  cursor: pointer;
+
+}
+
+.btn-group button {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 30%;
+  padding: 15px 15px;
+}
+
+.others button{
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  padding: 15px 15px;
+}
+
+.others button p{
+  color: black;
+}
+
+.btn-group p {
+  color: black;
+}
+
+.container{
+  background-color: dimgrey;
+  padding: 0;
+  margin: 80px 5% 13% 5%;
+}
+
+html,body{
+  margin: 0;
+  background-color: dimgrey;
+}
+
+.nav-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-container ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  margin: auto ;
+  padding: auto;
+  overflow: hidden;
+  background-color: #222;
+  text-align: center;
+}
+
+.nav li {
+  float: left;
+  text-align: center;
+}
+
+.nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+
+
+.landing {
+  width: 100%;
+  min-width: 800px;
+  box-sizing: border-box;
+  background-color: #222;
+  text-align: right;
+  display:flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 15px 12px; 
+  position: sticky;
+  top: 0;
+  
+  
+
+}
+
+.main-header{
+  margin: 0;
+  
+}
+
+.button_img{
+  height: 30px;
+  padding: 5px;
+}
+
+
+.landing-form option,select{
+  color:black;
+}
+
+.submit-btn {
+  color: black;
+  
+  
+}
+
+.SOP_img {
+  width: 60px;
+  padding-top: 20px;
+}
+
+.others_img {
+  float: left;
+  width: 60px;
+  padding: 20px 20px;
+}
+
+
+.feed{
+  display: flex;
+  align-items: center;
+  margin:0 5% 7% 5%;
+  
+
+}
+
+.feed img{
+  width:95%;
+  height:auto;
+  padding: 0% 0% 1% 2.5%;
+  
+}
+
+
+.feed-right{
+  text-align: left;
+  border: 1px solid black;
+  margin: 0 2%;
+  padding: 3% 3% 3% 1%;
+}
+
+.feed-left{
+  border:1px solid black;
+  width: 65%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.feed-username{
+  margin: 2%;
+  color: black;
+}
+
+.feed-tag{
+  margin: 0 5% 7% 5%;
+  padding: 0 2%;
+  border: 1px solid black;
+
+}
+
+.SOP_content {
+  font-size: 10;
+}
+
+ul.others-list{
+  margin-left: 75px;
+}
+
+ul.others-list li {
+  color: black;
+  text-align: left;
+}
+
+
+
+.hotlines a:link{
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 2em;
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  color: black;
+  padding: 1%
+
+}
+
+.hotlines a:hover{
+  color: white;
+  background-color:#222;
+}
+
+.button-group {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f0724b;
+  border: none;
+  border-radius: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2%;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+  top:0;
+}
+
+.search{
+  margin: 80px 20px 5% 5%; ;
+  text-align: right;
+}
+
+.search input{
+  text-align: right;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 38%;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.contact button{
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+.contact button:hover span:after{
+  top:38%;
+}
+
+.contact button span:after {
+  top: 38%;  
+}
+
+.contact a{
+  text-decoration: none;
+     
+}
+
+.contact img{
+  width:100px;
+  height:100px;
+  vertical-align: middle;
+}

@@ -37,23 +37,23 @@ def landing(request):
 #	return render(request, "result.html", context)
 """
 def landing(request):
-  state = None
-  vaccine = None
-  obj = None
-  obj1 = None
-
+  fetch = None
   if request.method == 'POST':
-      form = Landing_form(request.POST)
-      if form.is_valid():
-        obj = Sopdetail.objects.get(state=form.cleaned_data["state"])
-        state = form.cleaned_data["state"]
-        vaccine = form.cleaned_data["fully_vaccinated"]
-        insert = {
-          "form": Landing_form(request.POST),
-          "test": obj,
-					"vaccine": vaccine,
-        }
-        return render(request, "result.html", insert)
+			print(request.POST)
+			form = Landing_form(request.POST)
+			if form.is_valid():
+				if form.cleaned_data["fully_vaccinated"] == True:
+					fetch = Sopdetail.objects.filter(state = form.cleaned_data["state"]).get(vaccine = 'True')
+					print(fetch)
+				elif form.cleaned_data["fully_vaccinated"] == False:
+					fetch = Sopdetail.objects.filter(state = form.cleaned_data["state"]).get(vaccine = 'False')
+					print(fetch)
+				#fetch = Sopdetail.objects.get(state=form.cleaned_data["state"], vaccine=form.cleaned_data["fully_vaccinated"])
+				insert = {
+					"form": Landing_form(request.POST),
+					"fetch": fetch,
+				}
+				return render(request, "result.html", insert)
          
   else:
     form = Landing_form()

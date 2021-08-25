@@ -1,31 +1,124 @@
+<!--
 {% extends "landing.html" %}
 
 
 {% block result_page %}
 <div class="col-md-8 offset-md-2">
-  
-
-
-	<h3> State: {{ test.state }} </h3>
-	<p>Phase: {{ test.phase }} </p>
+	<h3> State: {{ fetch.state }} </h3>
+	<p>Phase: {{ fetch.phase }} </p>
 	<p> vaccine: {{ vaccine }}</p>
-	{% if vaccine %}
-	<p> Dining: {{ test.Description_dining }} </p>
-	<p> Travel: {{ test.Description_travel }} </p>
-	<p> Transport: {{ test.Description_transport }} </p>
-	<p> Religion: {{ test.Description_religion }} </p>
-	<p> Market: {{ test.Description_market }} </p>
-	<p> Shopping: {{ test.Description_shopping }} </p>
-
-  {% else %} 
-	<p> Dining: {{ test.Description_dining_unvaccinated }} </p>
-	<p> Travel: {{ test.Description_travel_unvaccinated }} </p>
-	<p> Transport: {{ test.Description_transport_unvaccinated }} </p>
-	<p> Religion: {{ test.Description_religion_unvaccinated }} </p>
-	<p> Market: {{ test.Description_market_unvaccinated }} </p>
-	<p> Shopping: {{ test.Description_shopping_unvaccinated }} </p>
-
-	{% endif %}
+	<p> Dining: {{ fetch.Description_dining }} </p>
+	<p> Travel: {{ fetch.Description_travel }} </p>
+	<p> Transport: {{ fetch.Description_transport }} </p>
+	<p> Religion: {{ fetch.Description_religion }} </p>
+	<p> Market: {{ fetch.Description_market }} </p>
+	<p> Shopping: {{ fetch.Description_shopping }} </p>
 
 </div>
 {% endblock %}
+!-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div w3-include-html="landing.html"></div>
+
+    <div class="container">
+      <h1>Current SOPs</h1>
+      <h3><i>based on your location & vaccination status</i> </h3>
+
+      <section class="SOP">
+        
+        <div class="btn-group" style="width:100%">
+
+          <button><img class ="SOP_img" src="images/Arts.png" alt="art img"> <p>Arts</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/camping.png" alt="camping img"> <p>Recreation</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/health.png" alt="health img"> <p>Health</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          </button>
+          <button><img class ="SOP_img" src="images/house_visit.png" alt="house img"> <p>House Visiting</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/market.png" alt="market img"> <p>Markets</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/meeting.png" alt="meeting img"> <p>Meetings</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/school.png" alt=school img""> <p>School</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/shop.png" alt="shop img"> <p>Shops</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/sports.png" alt="sports img"> <p>Sports</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          <button><img class ="SOP_img" src="images/taxi.png" alt="taxi img"> <p>Taxi</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+
+          <button><img class ="SOP_img" src="images/food.png" alt="food img"> <p>Dine-in</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+          
+          <button><img class ="SOP_img" src="images/religious.png" alt="mosqueimg"> <p>Religious</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+        
+          <button><img class ="SOP_img" src="images/social.png" alt="socialimg"> <p>Social Gatherings</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+
+        </div>
+
+        <div class="others">
+
+          <button><img class ="SOP_img" src="images/travel.png" alt="travel img"> <p>Travel</p>
+          <p class="SOP-content">{{SOP}}</p>
+          </button>
+
+          <button><p style="text-align:center">Other allowed activities</p>
+          <img class ="others_img" src="images/allowed.png" alt="yesimg">
+          <ul class="others-list">
+            <li>{{Activity 1}}</li>
+            <li>{{Activity 2}}</li>
+          </ul>
+          </button>
+
+          <button><p style="text-align:center">Other activities not allowed</p>
+          <img class ="others_img" src="images/not-allowed.png" alt="noimg">
+          <ul class="others-list">
+            <li>{{Activity 1}}</li>
+            <li>{{Activity 2}}</li>
+          </ul>
+          </button>
+
+        </div>
+
+      </section>
+    </div>
+
+    <div w3-include-html="nav.html"></div>
+    
+
+    <script src="script.js"></script>
+    <script>
+      includeHTML();
+    </script>
+    <script>includeHTML();</script>
+    
+  </body>
+</html>

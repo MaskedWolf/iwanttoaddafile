@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
 
 # Create your views here.
-from blog.models import Activity
+from blog.models import Activity, State
 from .forms import ActivityForm
+from django.contrib import messages
+
 
 def blog_index(request):
     """Display all activities """
@@ -18,21 +20,41 @@ def add_new_activity(request):
   form = ActivityForm()
   if request.method == 'POST':
     # print(request.POST)
-    form = ActivityForm(request.POST) 
-    # request.FILES)
+    form = ActivityForm(request.POST,request.FILES)
     if form.is_valid():
-      # image=form.cleaned_data["image"]
-      obj = Activity(
-        username=request.user,
-        shopname=form.cleaned_data["shopname"],
-        descriptions=form.cleaned_data["descriptions"],
-        category=form.cleaned_data["category"],
-        state=form.cleaned_data["state"],
-        # image=image,
+      state=form.cleaned_data["state"]
+      img = form.cleaned_data["image"]
+      username=request.user
+      shopname=form.cleaned_data["shopname"]
+      descriptions=form.cleaned_data["descriptions"]
+      category=form.cleaned_data["category"]
+      instance = Activity.objects.create(
+        username=username,
+        shopname=shopname,
+        descriptions=descriptions,
+        # category=category,
+        image=img,
       )
-      obj.save()
+      instance.state.set(state)
+      instance.category.set(category)
+
+      messages.success(request, 'Form submission successful')
 
   context = {
     "form": form,
   }
   return render(request, "new_activity.html", context)
+
+
+# obj = State.set(
+# 	username=request.user,
+# 	shopname=form.cleaned_data["shopname"],
+# 	descriptions=form.cleaned_data["descriptions"],
+# 	state=form.cleaned_data["state"],
+# 	category=form.cleaned_data["category"],
+# 	img = img,
+# )
+# obj.save()
+			
+
+
