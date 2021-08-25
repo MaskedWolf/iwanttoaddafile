@@ -13,17 +13,22 @@ def blog_index(request):
     }
     return render(request, "blog_index.html", context)
 
+
 def add_new_activity(request):
   form = ActivityForm()
   if request.method == 'POST':
     form = ActivityForm(request.POST)
-    # if form.is_valid():
-    #   form = Activity(
-    #     # edit this
-    #     author=form.cleaned_data["author"],
-    #     body=form.cleaned_data["body"],
-    #   )
-    #   form.save()
+    if form.is_valid():
+      form = Activity(
+        # edit this
+        username=request.user,
+        shopname=form.cleaned_data["shopname"],
+        descriptions=form.cleaned_data["descriptions"],
+        category=form.cleaned_data["category"],
+        state=form.cleaned_data["state"],
+        image=form.cleaned_data["image"],
+      )
+      form.save()
 
   context = {
       "form": form,

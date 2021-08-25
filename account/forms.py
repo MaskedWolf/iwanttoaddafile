@@ -24,5 +24,5 @@ class SignUpForm(UserCreationForm):
   def __init__(self):
     super(SignUpForm,self).__init__()
     self.fields["username"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Username'})
-    self.field["password1"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Type in your password'})
-    self.field["password2"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Confirm your password'})
+    self.fields["password1"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Type in your password'})
+    self.fields["password2"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Confirm your password'})

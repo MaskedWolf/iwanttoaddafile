@@ -5,37 +5,47 @@ class ActivityForm(forms.Form):
         max_length=255,
         widget=forms.TextInput(attrs={
             "class": "form-control",
-            "placeholder": "Your Name"
+            "placeholder": "Activity Name"
+        })
+    )
+    
+    descriptions = forms.CharField(
+        max_length=4000,
+        widget=forms.TextInput(attrs={
+            "class": "form-control",
+            "placeholder": "Descriptions"
         })
     )
 
-    # descriptions = forms.TextField(widget=forms.Textarea(
-    #     attrs={
-    #         "class": "form-control",
-    #         "placeholder": "Leave a comment!"
-    #     })
-    # )
 
-    # author = forms.CharField(
-    #     max_length=255,
-    #     widget=forms.TextInput(attrs={
-    #         "class": "form-control",
-    #         "placeholder": "Your Name"
-    #     })
-    # )
+    # this is probably wrong
+    image = forms.ImageField()
+    
+    states = (
+      ('JOHOR', 'Johor'),
+      ('KEDAH', 'Kedah'),
+      ('KELANTAN', 'Kelantan'),
+      ('MALACCA', 'Malacca'),
+      ('NEGERI SEMBILAN','Negeri Sembilan'),
+      ('PAHANG', 'Pahang'),
+      ('PENANG', 'Penang'),
+      ('PERAK', 'Perak'),
+      ('PERLIS', 'Perlis'),
+      ('SABAH', 'Sabah'),
+      ('SARAWAK', 'Sarawak'),
+      ('SELANGOR', 'Selangor'),
+      ('TERENGGANU', 'Terengganu'),
+      ('KUALA LUMPUR', 'Kuala Lumpur'),
+      ('LABUAN', 'Labuan'),
+      ('PUTRAJAYA', 'Putrajaya'),
+    )
 
-    # author = forms.CharField(
-    #     max_length=255,
-    #     widget=forms.TextInput(attrs={
-    #         "class": "form-control",
-    #         "placeholder": "Your Name"
-    #     })
-    # )
+    state = forms.ChoiceField(choices=states)
 
-    # category
-    # state
-    # image
-
-  # category = models.ManyToManyField('Category', related_name='activity')
-  # state = models.ManyToManyField('State', related_name='activity')
-  # image = models.ImageField(upload_to='picture/')
+    category = forms.CharField(
+        max_length=255,
+        widget=forms.TextInput(attrs={
+            "class": "form-control",
+            "placeholder": "Category"
+        })
+    )
