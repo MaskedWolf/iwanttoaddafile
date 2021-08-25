@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Sop_detail(models.Model):
+class Sopdetail(models.Model):
 
 	states = (
 		('JOHOR', 'Johor'),
@@ -34,11 +34,21 @@ class Sop_detail(models.Model):
 
 	Description_dining_vaccinated = models.CharField(max_length=200,null=True)
 	Description_dining_unvaccinated = models.CharField(max_length=200,null=True)
+
 	Description_travel = models.CharField(max_length=200,null=True)
+	Description_travel_unvaccinated = models.CharField(max_length=200,null=True)
+
 	Description_transport = models.CharField(max_length=200,null=True)
+	Description_transport_unvaccinated = models.CharField(max_length=200,null=True)
+
 	Description_religion = models.CharField(max_length=200,null=True)
+	Description_religion_unvaccinated = models.CharField(max_length=200,null=True)
+
 	Description_market = models.CharField(max_length=200,null=True)
+	Description_market_unvaccinated = models.CharField(max_length=200,null=True)
+
 	Description_shopping = models.CharField(max_length=200,null=True)
+	Description_shopping_unvaccinated = models.CharField(max_length=200,null=True)
 
 	def __str__(self):
 		return self.state

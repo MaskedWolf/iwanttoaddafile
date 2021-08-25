@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Sop_detail
+from .models import Sopdetail
 
-admin.site.register(Sop_detail)
+admin.site.register(Sopdetail)
 
 

@@ -2,7 +2,7 @@ from django import forms
 
 class Landing_form(forms.Form):
 
-  states = (
+	states = (
 		('JOHOR', 'Johor'),
 		('KEDAH', 'Kedah'),
 		('KELANTAN', 'Kelantan'),
@@ -18,7 +18,7 @@ class Landing_form(forms.Form):
 		('TERENGGANU', 'Terengganu'),
 		('KUALA LUMPUR', 'Kuala Lumpur'),
 		('LABUAN', 'Labuan'),
-		('PUTRAJAYA', 'Putrajaya')
+		('PUTRAJAYA', 'Putrajaya'),
 	)
-	state = forms.CharField(max_length=50,choices=states)
-  vaccine = forms.BooleanField(null=True)
+	state = forms.ChoiceField(choices=states)
+	fully_vaccinated = forms.BooleanField(required = False)

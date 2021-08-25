@@ -16,14 +16,12 @@ class State(models.Model):
 class Activity(models.Model):
   def __str__(self):
     return self.shopname
+
   username = models.CharField(max_length=255)
   shopname = models.CharField(max_length=255)
   descriptions = models.TextField()
   category = models.ManyToManyField('Category', related_name='activity')
   state = models.ManyToManyField('State', related_name='activity')
-  #########################
-  # Store image
-  # Change the directory
   image = models.ImageField(upload_to='picture/')
 
   created_on = models.DateTimeField(auto_now_add=True)

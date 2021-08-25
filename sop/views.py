@@ -5,9 +5,9 @@ from .forms import Landing_form
 # Create your views here.
 def landing(request):
 
-	form = Landing()
+	form = Landing_form()
 	if request.method == 'POST':
-		form = Landing(request.POST)
+		form = Landing_form(request.POST)
 		if form.is_valid():
 			pass
           
