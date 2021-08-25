@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Create your models here.
@@ -21,8 +22,9 @@ class Activity(models.Model):
   shopname = models.CharField(max_length=255)
   descriptions = models.CharField(max_length=4000)
   category = models.ManyToManyField('Category', related_name='activity')
+  
   state = models.ManyToManyField('State', related_name='activity')
-  image = models.ImageField(upload_to='picture/')
+  image = models.ImageField(upload_to='picture/', required=False)
 
   created_on = models.DateTimeField(auto_now_add=True)
   last_modified = models.DateTimeField(auto_now=True)

@@ -32,7 +32,8 @@ class Sopdetail(models.Model):
 	phase = models.IntegerField(choices=ph,null=True)
 
 
-	Description_dining_vaccinated = models.CharField(max_length=200,null=True)
+
+	Description_dining = models.CharField(max_length=200,null=True)
 	Description_dining_unvaccinated = models.CharField(max_length=200,null=True)
 
 	Description_travel = models.CharField(max_length=200,null=True)

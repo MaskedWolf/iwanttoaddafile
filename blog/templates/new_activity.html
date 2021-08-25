@@ -3,6 +3,10 @@
 <h3>Submit your username</h3>
 <form method="post">
   {% csrf_token %}
-  {{form}}
+  {% if user.is_authenticated %}
+  {{form.as_p}}
   <button type="submit" name="click" value="click">Submit</button>
+  {% else %}
+  <p>Only members can submit activities, login <a href="/login">here</a></p>
+  {% endif %}
 </form>

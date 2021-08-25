@@ -6,11 +6,13 @@ from django.contrib.auth.models import User
 class SignUpForm(UserCreationForm):
   fname = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
             "class": "sign_up_fname",
-            "placeholder": "Your First Name"
+            "placeholder": "Your First Name",
+            "name": "First name"
         }))
   lname = forms.CharField(max_length=20, widget=forms.TextInput(attrs={
             "class": "sign_up_lname",
-            "placeholder": "Your Last Name"
+            "placeholder": "Your Last Name",
+            "name": "Last name"
         }))
   email = forms.EmailField(widget=forms.EmailInput(attrs={
             "class": "sign_up_email",
@@ -21,8 +23,8 @@ class SignUpForm(UserCreationForm):
     model = User
     fields = ["fname", "lname", "email", "username", "password1", "password2"]
 
-  def __init__(self):
-    super(SignUpForm,self).__init__()
+  def __init__(self, *args, **kwargs):
+    super(SignUpForm,self).__init__(*args, **kwargs)
     self.fields["username"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Username'})
-    self.fields["password1"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Type in your password'})
-    self.fields["password2"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Confirm your password'})
+    self.fields["password1"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Password'})
+    self.fields["password2"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Confirm password'})

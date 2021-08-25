@@ -1,11 +1,19 @@
 {
   "files": {
+    "blog/templates/blog_index.html": [
+      {
+        "id": "fa85d8a3-9bda-4c39-94d1-6ed1a24d3ae1",
+        "line": 5,
+        "version": 59,
+        "index": 56
+      }
+    ],
     "sop/urls.py": [
       {
         "id": "6ff01b23-d34b-4515-9c0d-b558fef7a272",
-        "line": 6,
-        "version": 10,
-        "index": 115
+        "line": 7,
+        "version": 54,
+        "index": 118
       }
     ]
   }

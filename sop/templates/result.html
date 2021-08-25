@@ -1,9 +1,31 @@
-{% extends "base.html" %}
+{% extends "landing.html" %}
 
 
 {% block result_page %}
 <div class="col-md-8 offset-md-2">
-    <h3> State: {{ test.state }} </h3>
-		<p>Phase: {{ test.phase }} </p>
+  
+
+
+	<h3> State: {{ test.state }} </h3>
+	<p>Phase: {{ test.phase }} </p>
+	<p> vaccine: {{ vaccine }}</p>
+	{% if vaccine %}
+	<p> Dining: {{ test.Description_dining }} </p>
+	<p> Travel: {{ test.Description_travel }} </p>
+	<p> Transport: {{ test.Description_transport }} </p>
+	<p> Religion: {{ test.Description_religion }} </p>
+	<p> Market: {{ test.Description_market }} </p>
+	<p> Shopping: {{ test.Description_shopping }} </p>
+
+  {% else %} 
+	<p> Dining: {{ test.Description_dining_unvaccinated }} </p>
+	<p> Travel: {{ test.Description_travel_unvaccinated }} </p>
+	<p> Transport: {{ test.Description_transport_unvaccinated }} </p>
+	<p> Religion: {{ test.Description_religion_unvaccinated }} </p>
+	<p> Market: {{ test.Description_market_unvaccinated }} </p>
+	<p> Shopping: {{ test.Description_shopping_unvaccinated }} </p>
+
+	{% endif %}
+
 </div>
 {% endblock %}

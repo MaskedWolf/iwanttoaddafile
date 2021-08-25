@@ -5,14 +5,14 @@
 {% block landing_page %}
 <div class="col-md-8 offset-md-2">
 
-    <form method="post">
+    <form method="POST">
       {% csrf_token %}
       {{form}}
       <button type="submit">go</button>
-
-
-			<h3> State: {{ test.state }} </h3>
-			<p>Phase: {{ test.phase }} </p>
+			{% if state != 'None' %}
+			{% block result_page %}
+			{% endblock %}
+			{% endif %}
     </form>
 </div>
 {% endblock %}

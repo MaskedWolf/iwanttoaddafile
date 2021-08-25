@@ -16,28 +16,24 @@ class ActivityForm(forms.Form):
             "placeholder": "Descriptions"
         })
     )
-
-
-    # this is probably wrong
-    image = forms.ImageField()
     
     states = (
-      ('JOHOR', 'Johor'),
-      ('KEDAH', 'Kedah'),
-      ('KELANTAN', 'Kelantan'),
-      ('MALACCA', 'Malacca'),
-      ('NEGERI SEMBILAN','Negeri Sembilan'),
-      ('PAHANG', 'Pahang'),
-      ('PENANG', 'Penang'),
-      ('PERAK', 'Perak'),
-      ('PERLIS', 'Perlis'),
-      ('SABAH', 'Sabah'),
-      ('SARAWAK', 'Sarawak'),
-      ('SELANGOR', 'Selangor'),
-      ('TERENGGANU', 'Terengganu'),
-      ('KUALA LUMPUR', 'Kuala Lumpur'),
-      ('LABUAN', 'Labuan'),
-      ('PUTRAJAYA', 'Putrajaya'),
+        ('JOHOR', 'Johor'),
+        ('KEDAH', 'Kedah'),
+        ('KELANTAN', 'Kelantan'),
+        ('MALACCA', 'Malacca'),
+        ('NEGERI SEMBILAN','Negeri Sembilan'),
+        ('PAHANG', 'Pahang'),
+        ('PENANG', 'Penang'),
+        ('PERAK', 'Perak'),
+        ('PERLIS', 'Perlis'),
+        ('SABAH', 'Sabah'),
+        ('SARAWAK', 'Sarawak'),
+        ('SELANGOR', 'Selangor'),
+        ('TERENGGANU', 'Terengganu'),
+        ('KUALA LUMPUR', 'Kuala Lumpur'),
+        ('LABUAN', 'Labuan'),
+        ('PUTRAJAYA', 'Putrajaya'),
     )
 
     state = forms.ChoiceField(choices=states)
@@ -49,3 +45,5 @@ class ActivityForm(forms.Form):
             "placeholder": "Category"
         })
     )
+
+    #image = forms.ImageField()

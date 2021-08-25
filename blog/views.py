@@ -17,20 +17,22 @@ def blog_index(request):
 def add_new_activity(request):
   form = ActivityForm()
   if request.method == 'POST':
-    form = ActivityForm(request.POST)
+    # print(request.POST)
+    form = ActivityForm(request.POST) 
+    # request.FILES)
     if form.is_valid():
-      form = Activity(
-        # edit this
+      # image=form.cleaned_data["image"]
+      obj = Activity(
         username=request.user,
         shopname=form.cleaned_data["shopname"],
         descriptions=form.cleaned_data["descriptions"],
         category=form.cleaned_data["category"],
         state=form.cleaned_data["state"],
-        image=form.cleaned_data["image"],
+        # image=image,
       )
-      form.save()
+      obj.save()
 
   context = {
-      "form": form,
+    "form": form,
   }
   return render(request, "new_activity.html", context)

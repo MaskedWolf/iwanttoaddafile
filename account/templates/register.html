@@ -9,11 +9,14 @@
         <title>Register</title>
     </head>
     <body>
+      <div class="form-container">
         <form method="POST" class="form_group">
-          {{form}}
+          {{form.as_p}}
           {% csrf_token %}
           <p>Already have an account? Login <a href="/login">here</a></p>
           <button type="submit" class="btn">Join Us</button>
         </form>
+      </div>
     </body>
 </html>
+
