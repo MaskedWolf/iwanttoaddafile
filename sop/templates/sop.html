@@ -4,7 +4,11 @@
 {% load static %}
 <div class="container">
   <h1>Current SOPs</h1>
-  <h3><i>based on your location & vaccination status</i> </h3>
+  <h3><i>
+    {% if SOP.vaccine == None %}
+    Please select your state and your vaccination status on the top
+    {% elif SOP.vaccine == True %}for fully vaccinated people in your location{% else %}for not fully vaccinated people in your location{% endif %} {{SOP.state}}
+    </i> </h3>
 	<h3><i> Phase : {{SOP.phase}} </i> </h3>
   <section class="SOP">
     
@@ -57,7 +61,10 @@
 
     <div class="others">
 
-      <button><img class ="SOP_img" src="{% static 'assets/images/travel.png' %}"  alt="travel img"> <p>Travel</p>
+      <button><img class ="SOP_img" src="{% static 'assets/images/travel.png' %}"  alt="travel img"> 
+      <a href="https://harianpost.my/wp-content/uploads/2021/04/Surat-PKP.docx" download>
+      <p>Travel</p>
+      </a>
       <p class="SOP-content">{{SOP.Description_Travel}}</p>
       </button>
 
@@ -65,14 +72,12 @@
       <img class ="others_img" src="{% static 'assets/images/allowed.png' %}" alt="yesimg">
       <ul class="others-list">
         <li>{{SOP.Description_others_y}}</li>
-        <li>{{SOP.Description_others_y}}</li>
       </ul>
       </button>
 
       <button><p style="text-align:center">Other activities not allowed</p>
       <img class ="others_img" src="{% static 'assets/images/not-allowed.png' %}" alt="noimg">
       <ul class="others-list">
-        <li>{{SOP.Description_others_n}}</li>
         <li>{{SOP.Description_others_n}}</li>
       </ul>
       </button>

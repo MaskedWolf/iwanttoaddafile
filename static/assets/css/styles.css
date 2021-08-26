@@ -2,18 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 * {
   font-family: 'Quicksand';
-  color: white;
   
+  
+  
+}
+* a{
+  text-decoration: none;
 }
 
 body{
-  min-width: 800px;
+  min-width: auto;
+  color: white;
+  
+  
 }
 
 h1 {
   color: white;
   text-align: center;
-  
 }
 
 h3 {
@@ -66,14 +72,14 @@ h3 {
 }
 
 .container{
-  background-color: dimgrey;
+  color: black;
   padding: 0;
   margin: 80px 5% 13% 5%;
 }
 
 html,body{
   margin: 0;
-  background-color: dimgrey;
+  
 }
 
 .nav-container {
@@ -92,7 +98,8 @@ html,body{
   margin: auto ;
   padding: auto;
   overflow: hidden;
-  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
   text-align: center;
 }
 
@@ -115,8 +122,6 @@ html,body{
   width: 100%;
   min-width: 800px;
   box-sizing: border-box;
-  background-color: #222;
-  background-image: url('images/marble1.jfif');
   text-align: right;
   display:flex;
   flex-direction: row; 
@@ -125,6 +130,8 @@ html,body{
   padding: 15px 12px; 
   position: sticky;
   top: 0;
+  background-color: rgba(0, 0, 0, 0.75); 
+  background-blend-mode: multiply;
   
   
 
@@ -143,6 +150,7 @@ html,body{
 
 .landing-form option,select{
   color:black;
+  
 }
 
 .submit-btn {
@@ -175,7 +183,6 @@ html,body{
   width:95%;
   height: 95%;
   object-fit: cover;
-  height:auto;
   padding: 0% 0% 1% 2.5%;
   
 }
@@ -184,14 +191,21 @@ html,body{
 .feed-right{
   text-align: left;
   border: 1px solid black;
+  background-color: rgba(255,255,255,0.7);
   margin: 0 2%;
   padding: 3% 3% 3% 1%;
+  color: black;
+}
+
+#feed-right{
+  color: black;
+
 }
 
 .feed-left{
   border:1px solid black;
   width: 65%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .feed-username{
@@ -286,7 +300,7 @@ ul.others-list li {
 }
 
 .search{
-  margin: 80px 20px 5% 5%; ;
+  margin: 20px 20px 5% 5%; ;
   text-align: right;
 }
 
@@ -333,3 +347,19 @@ ul.others-list li {
 
 
 }
+
+.search_form {
+  text-align: left;
+  
+}
+
+.search_form label{
+  display: none;
+
+}
+
+.search-text {
+  text-align: left;
+  color: black;
+}
+

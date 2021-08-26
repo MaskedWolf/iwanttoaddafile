@@ -7,6 +7,13 @@
     <!-- <div class="search">
     <input name='search' type='text' placeholder="Search &#8711;">
     </div> -->
+    <div class="search">
+      <form method="POST" class="search_form">
+      {% csrf_token %}
+      {{ form }}
+      <input class='submit-btn'type="submit" value='Search' />
+      </form>
+    </div>
     {% for post in posts %}
     <div class="feed">
       <div class="feed-left">
@@ -14,11 +21,13 @@
       <!-- <img class="feed-img" src="{% static 'assets/images/VeganFood.jpg' %}"  alt='veganfood'> -->
       <img class="feed-img" src="{{ post.image.url }}"  alt='veganfood'>
       </div>
-      <div class="feed-right">
-      <div>{{post.shopname}}</div>
-      <div>{{post.descriptions}}</div>
-      <div>{{post.category}}</div>
-      <div>{{post.state}}</div>
+      <div class="feed-right" >
+      <div id='feed-right'>{{post.shopname}}</div>
+      <div id='feed-right'>{{post.descriptions}}</div>
+      <div id='feed-right'>{% for category in post.category.all %}
+        <div id='feed-right'>{{category}}</div>{% endfor %}</div>
+      <div id='feed-right'>{% for state in post.state.all %}
+        <div id='feed-right'>{{state}}</div>{% endfor %}</div>
       </div>
     </div>
     {% endfor %}

@@ -9,7 +9,7 @@
     <title>MySOP</title>
     <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet" type="text/css" />
   </head>
-  <body>
+  <body style='background-image:url("https://images.pexels.com/photos/2824173/pexels-photo-2824173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");'>
 <!-- 
   <header class='landing'>
 	  <h1 class="main-header">MySOP </h1>
@@ -59,8 +59,10 @@
       <button type="submit" class="submit-btn">Confirm</button>
   </header> -->
 
-  <header class='landing'>
+  <header class='landing' style='background-color: #222'>
+  <a href="/">
 	<h1 class="main-header">Meme </h1>
+  </a>
 	<form class="landing-form" action={% url 'sop'%} method="POST">
 		<label for="state">State </label
       ><select id="state" name="state">
@@ -106,13 +108,15 @@
   <h1>If you see this text, the website is experiencing some problems</h1>
   {% endblock %}
   
-  <footer>
-    <div class="nav-container">
+  <footer >
+    <div class="nav-container" style='background-color: #222';'>
       <ul class="nav">
         <li><a href="/"><img class="button_img" src="{% static 'assets/images/home.png' %}" alt=""> </a></li>
         <li><a href="{% url 'sop' %}">SOPs</a></li>
         <li><a href="/portal">Portal</a></li>
+        <li><a href="/random"><img class="button_img" src=" {% static 'assets/images/dice.png' %}" alt=""></a></li>
         <li><a href="{% url 'about' %}"><img class="button_img" src=" {% static 'assets/images/question.png' %}" alt=""></a></li>
+
       </ul>
     </div>
   </footer>

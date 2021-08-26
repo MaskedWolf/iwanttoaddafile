@@ -1,0 +1,150 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random</title>
+    <style>
+      .box {
+        position: absolute;
+        top: calc(50% - 150px);
+        left: calc(30% - 100px);
+        transform: perspective(1000px) rotateY(-45deg);
+        width: 200px;
+        height: 300px;
+        transform-style: preserve-3d;
+      }
+
+      .box:before {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: #000;
+        filter: blur(90px);
+        opacity: 0.5;
+        transform: rotateX(90deg);
+      }
+
+      .box div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: animate 5s linear infinite;
+      }
+
+      .box div span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, #f1f1f1, #bbb, #f1f1f1);
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .box div span:nth-child(1) {
+        transform: rotateX(0deg);
+      }
+
+      .box div span:nth-child(2) {
+        transform: rotateX(45deg);
+      }
+
+      .box div span:nth-child(3) {
+        transform: rotateX(-45deg);
+      }
+
+      .box div span:nth-child(4) {
+        transform: rotateX(90deg);
+      }
+
+
+      @keyframes animate {
+        0%
+        {
+          transform: perspective(1000px) rotateX(0deg);
+        }
+        100% 
+        {
+          transform: perspective(1000px) rotateX(359deg);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}" type="text/css">
+  </head>
+  <body>
+<header class='landing' style='background-color: #222'>
+  <a href="/">
+	<h1 class="main-header">Meme </h1>
+  </a>
+	<form class="landing-form" action={% url 'sop'%} method="POST">
+		<label for="state">State </label
+      ><select id="state" name="state">
+        <option value="SABAH">Sabah</option>
+        <option value="SARAWAK">Sarawak</option>
+        <option value="SELANGOR">Selangor</option>
+        <option value="JOHOR">Johor</option>
+        <option value="KEDAH">Kedah</option>
+        <option value="PERAK">Perak</option>
+        <option value="NEGERI SEMBILAN">Negeri Sembilan</option>
+        <option value="PENANG">Penang</option>
+        <option value="PAHANG">Pahang</option>
+        <option value="PERLIS">Perlis</option>
+        <option value="KELANTAN">Kelantan</option>
+        <option value="TERENGGANU">Terengganu</option>
+        <option value="MALACCA">Malacca</option>
+				<option value="KUALA LUMPUR">Kuala Lumpur</option>
+        <option value="LABUAN">Labuan</option>
+        <option value="PUTRAJAYA">Putrajaya</option>
+  			
+      </select>
+
+      <!-- <label for="vaxstatus">Vaccination Status</label> -->
+      <label for="id_fully_vaccinated">Fully vaccinated:</label>
+      <input type="checkbox" name="fully_vaccinated" id="id_fully_vaccinated">
+      <input class='submit-btn'type="submit" value='Confirm' />
+    </form>
+  </header>
+    <div class="flip">
+      <div class="box">
+        <div>
+          <span style="color: black; text-align: center">Programming</span>
+          <span style="color: black; text-align: center">Engineering</span>
+          <span style="color: black; text-align: center">Music</span>
+          <span style="color: black; text-align: center">Exercise</span>
+        </div>
+      </div>
+    </div>
+    <a href="/random">
+        <button class="button" sytle="width: 100px; height: 75px;" type="button">Spin</button>
+      </a>
+    
+      <a href={{ suggest.link }} target="_blank" style="display: block; width: 300px; height: 225px; color: black;">
+        <button type="button" style="color: black;">{{ suggest.name }}</button>
+      </a>
+    
+
+    <footer >
+    <div class="nav-container" style='background-color: #222';'>
+      <ul class="nav">
+        <li><a href="/"><img class="button_img" src="{% static 'assets/images/home.png' %}" alt=""> </a></li>
+        <li><a href="{% url 'sop' %}">SOPs</a></li>
+        <li><a href="/portal">Portal</a></li>
+        <li><a href="/random"><img class="button_img" src=" {% static 'assets/images/dice.png' %}" alt=""></a></li>
+        <li><a href="{% url 'about' %}"><img class="button_img" src=" {% static 'assets/images/question.png' %}" alt=""></a></li>
+
+      </ul>
+    </div>
+  </footer>
+    
+    <script src= "{% static 'assets/script/script.js' %}"></script>
+  </body>
+</html>

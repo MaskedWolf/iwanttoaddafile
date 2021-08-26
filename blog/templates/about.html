@@ -2,10 +2,10 @@
 
 {% block content %}
 {% load static %}
-<div w3-include-html="landing.html"></div>
+
   <div class="container">
-      <h1>About Us</h1>
-      <p>At such struggling times, we, the Meme Team is here to guide you to your solutions. From complicated,hard-to-understand SOPs to killing time with the most unique courses near you, we've simplified and packaged it into a single,neat website, just for you!</p>
+      <h1 style='color: black'>About Us</h1>
+      <p>At such struggling times, we, the Meme Team is here to guide you to your solutions. From complicated, hard-to-understand SOPs to killing time with learning resources, we've simplified and packaged it into a single, neat website, just for you!</p>
     
     <br>
     <button class="button" style="vertical-align:middle" onclick="location.href='https://covid-19.moh.gov.my/hotline'">
@@ -14,7 +14,7 @@
 
 <br>
       
-  <div class="contact-container">
+  <div class="container" style='color: black;'>
     <h2>Contact Us</h2>
     <div class="contact">
       <a href="https://www.instagram.com/hsinorshin/" target="_blank"><button class="button" style="vertical-align:middle">
@@ -31,7 +31,5 @@
       </div>     
   </div>
   </div>
-    <div w3-include-html="nav.html"></div>
-    <script src='{% static 'assets/script/script.js' %}'></script>
-    <script>includeHTML();</script>
+
 {% endblock %}

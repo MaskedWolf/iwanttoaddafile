@@ -53,3 +53,10 @@ class ActivityForm(forms.Form):
     )
 
     image = forms.ImageField()
+
+class search(forms.Form):
+  keyword = forms.CharField(max_length=200, widget=forms.TextInput(attrs={
+            "class": "form-control search-text",
+            "placeholder": "Search...",
+            "style": "color: black;",
+        }))

@@ -90,4 +90,4 @@ def sop(request):
   else:
     form = Landing_form()
 
-  return render(request, "sop.html", {"form":form})
+  return render(request, "sop.html", {"form":form, "SOP":None})

@@ -21,6 +21,7 @@ class Activity(models.Model):
   username = models.CharField(max_length=255)
   shopname = models.CharField(max_length=255)
   descriptions = models.CharField(max_length=4000)
+  hiring = models.CharField(max_length=20, null=True, blank=True)
   category = models.ManyToManyField('Category', related_name='activity')
   # category = models.CharField(max_length=255, null=True)
   

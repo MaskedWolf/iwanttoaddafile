@@ -1,5 +1,4 @@
 {% load static %}
-{% load crispy_forms_tags %}
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -12,7 +11,7 @@
       <div class="form-container">
         <form method="POST" class="form_group">
           {{form.as_p}}
-          {% csrf_token %}
+					{% csrf_token %}
           <p>Already have an account? Login <a href="/login">here</a></p>
           <button type="submit" class="btn">Join Us</button>
         </form>

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from account import views as accountViews
 from blog import views as blogViews
+from suggest import views as suggestViews
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -28,6 +29,7 @@ urlpatterns = [
     path('register/', accountViews.register, name="register"),
     path('', include("django.contrib.auth.urls")),
     path('portal/', blogViews.portal, name="portal"),
+    path('random/', suggestViews.suggest, name="suggest")
 ]
 
 if settings.DEBUG:
